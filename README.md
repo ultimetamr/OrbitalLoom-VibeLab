@@ -8,6 +8,7 @@
 ## 构建信息
 
 - 应用版本：0.9.9，versionCode 27
+- 图标：应用、圆形图标和启动入口均指定原星轨 PNG；PICO 真机已确认应用列表显示星轨图标。
 - 应用包名：`com.orbitalloom.puzzle`
 - Unity：6000.6.8f1，IL2CPP，ARM64，Release
 - Android：minSdk29，target/compileSdk36，NDK27.2.12479018(r27c)
@@ -33,6 +34,7 @@ ARM64 IL2CPP 已在 Windows 使用 Unity 自带 NDK 实际编译。`jniLibs/arm6
 - 10 段教学仅按当前高亮操作可通关；DSP 节拍暂停、继续、停止验证通过
 - Release APK 构建成功；全部原生库为 ARM64 ELF64
 - APK 本地签名验证、zipalign 检查通过
+- 构建号 27 已覆盖安装到 PICO 真机；安装包 SHA256：`4a1acd3fca06dd17dce6122335e533381b9f834b5d15a994ee4451a2896b0bab`
 - 移除中间代码及缓存后再次构建成功，buildIl2Cpp SKIPPED，所有 APK 原生库名称/ABI/哈希与移除前一致
 
 上述结果不等同于 Unity6 真机验收或 Vibe Lab 平台审核通过。此前“安装包签名失败”的完整平台日志尚未提供，不能据此断定根因。
