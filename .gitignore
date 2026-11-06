@@ -1,0 +1,15 @@
+/local.properties
+/.gradle/
+/build/
+/.cxx/
+/launcher/build/
+/launcher/.gradle/
+/launcher/.cxx/
+/unityLibrary/build/
+/unityLibrary/.gradle/
+/unityLibrary/.cxx/
+/unityLibrary/symbols/
+/unityLibrary/xrmanifest.androidlib/build/
+*.apk
+*.keystore
+*.jks

@@ -1,0 +1,76 @@
+[
+  {
+    "path": "ProjectSettings/ProjectVersion.txt",
+    "reason": "Unity6 UPM rejects the original China editor c1 version suffix before migration; identify the installed target editor explicitly.",
+    "before": "m_EditorVersion: 2022.3.62f3c1\nm_EditorVersionWithRevision: 2022.3.62f3c1 (1623fc0bbb97)\n",
+    "after": "m_EditorVersion: 6000.6.8f1\nm_EditorVersionWithRevision: 6000.6.8f1 (237b6593792b)\n"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "User-authorized removal of unavailable legacy built-in package com.unity.modules.vr; XR remains enabled.",
+    "removed": "com.unity.modules.vr@1.0.0"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "InputSystem1.14 uses removed Unity6000.6 editor TreeView APIs (CS0619); replacement1.20.1 verified from official Unity registry, minimum editor6000.0",
+    "before": "com.unity.inputsystem@1.14.0",
+    "after": "com.unity.inputsystem@1.20.1"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "Resolve Unity6000.6 UAC0005 assembly enumeration errors using official Unity registry verified release",
+    "before": "com.unity.xr.core-utils@2.5.2",
+    "after": "com.unity.xr.core-utils@2.6.0"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "Resolve Unity6000.6 UAC0005 assembly enumeration errors using official Unity registry verified release",
+    "before": "com.unity.visualscripting@1.9.4",
+    "after": "com.unity.visualscripting@1.9.13"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "Replace removed Unity6.6 editor ID APIs with official OpenXR release verified in Unity registry",
+    "before": "1.14.2",
+    "after": "1.19.0"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Exporter/SpatialAdapterPrefabExporter.cs",
+    "reason": "Unity6.6 removed old instance ID API. Use installed editor documented EntityId API; preserve SDK int conversion contract.",
+    "before": "prefab.GetInstanceID()",
+    "after": "prefab.GetEntityId()"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Exporter/SpatialAdapterShaderGraphExporter.cs",
+    "reason": "Unity6.6 removed old instance ID API. Use installed editor documented EntityId API; preserve SDK int conversion contract.",
+    "before": "shader.GetInstanceID()",
+    "after": "shader.GetEntityId()"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Settings/SpatialAdapterRuntimeSettings.cs",
+    "reason": "Unity6.6 removed old instance ID API. Use installed editor documented EntityId API; preserve SDK int conversion contract.",
+    "before": "objectReferenceInstanceIDValue",
+    "after": "objectReferenceEntityIdValue"
+  },
+  {
+    "path": "Packages/manifest.json",
+    "reason": "Replace obsolete Unity6.6 editor APIs with official registry verified XRI release",
+    "before": "3.3.0",
+    "after": "3.7.0"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Exporter/SpatialAdapterPrefabExporter.cs",
+    "reason": "SDK6.1 serializes int IDs; EntityId-to-int conversion is removed. Editor-only reflection preserves exact legacy ID contract without truncation or hash collisions. Must verify export runtime availability.",
+    "change": "Resolve preserved legacy Object.GetInstanceID method at export time"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Exporter/SpatialAdapterShaderGraphExporter.cs",
+    "reason": "SDK6.1 serializes int IDs; EntityId-to-int conversion is removed. Editor-only reflection preserves exact legacy ID contract without truncation or hash collisions. Must verify export runtime availability.",
+    "change": "Resolve preserved legacy Object.GetInstanceID method at export time"
+  },
+  {
+    "path": "Packages/com.bytedance.pico.spatialadapter/Exporter/Editor/Settings/SpatialAdapterRuntimeSettings.cs",
+    "reason": "Use EntityId.None rather than removed implicit int conversion",
+    "change": "replace ID zero sentinels with EntityId.None"
+  }
+]
