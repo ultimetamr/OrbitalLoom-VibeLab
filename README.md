@@ -7,7 +7,7 @@
 
 ## 构建信息
 
-- 应用版本：0.9.9，versionCode 26
+- 应用版本：0.9.9，versionCode 27
 - 应用包名：`com.orbitalloom.puzzle`
 - Unity：6000.6.8f1，IL2CPP，ARM64，Release
 - Android：minSdk29，target/compileSdk36，NDK27.2.12479018(r27c)
