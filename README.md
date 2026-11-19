@@ -1,13 +1,16 @@
 # Orbital Loom 星轨织机 — PICO Vibe Lab
 
+本版增加水晶拖放、直接旋转机关及空间展品握环，精简 UI 并更新教学。
+
 在独立 MR 空间中观察遗迹、水晶与星光，利用转向、分流、符文门、转换与联动机关，解开四个星域的 24 道谜题。包含逐步教学、错误复盘与节拍演出。
 
 本仓库是用于 Vibe Lab GitHub + Commit 提交的独立 Android Gradle 导出工程。
 完整 Unity C# 源工程另存于 https://github.com/ultimetamr/OrbitalLoom 。
+对应源码 Commit：`3cf6fd7ceef221499894e4436187adeb7d6d568b`。
 
 ## 构建信息
 
-- 应用版本：0.9.9，versionCode 27
+- 应用版本：1.0.0，versionCode 28
 - 图标：应用、圆形图标和启动入口均指定原星轨 PNG；PICO 真机已确认应用列表显示星轨图标。
 - 应用包名：`com.orbitalloom.puzzle`
 - Unity：6000.6.8f1，IL2CPP，ARM64，Release
@@ -28,16 +31,16 @@ ARM64 IL2CPP 已在 Windows 使用 Unity 自带 NDK 实际编译。`jniLibs/arm6
 
 ## 验证范围
 
-- Unity6 编译成功；144 项 EditMode 测试通过，0 失败，0 跳过
+- Unity6 编译成功；171 项 EditMode 测试通过，0 失败，0 跳过
 - 24 关参考解法、场景引用与缺失脚本检查通过
-- Editor 完整 UI 操作回归通过，24 关实际回调通关
-- 10 段教学仅按当前高亮操作可通关；DSP 节拍暂停、继续、停止验证通过
+- Editor 24 关抓取、移动、旋转、松手入口回归通过
+- 教学单一步骤高亮测试通过；首关直接操作教学可解；本版真机教学完整验收仍待确认
 - Release APK 构建成功；全部原生库为 ARM64 ELF64
 - APK 本地签名验证、zipalign 检查通过
-- 构建号 27 已覆盖安装到 PICO 真机；安装包 SHA256：`4a1acd3fca06dd17dce6122335e533381b9f834b5d15a994ee4451a2896b0bab`
-- 移除中间代码及缓存后再次构建成功，buildIl2Cpp SKIPPED，所有 APK 原生库名称/ABI/哈希与移除前一致
+- 构建号 28 已覆盖安装到 PICO 真机；安装包 SHA256：`682f96b4ca13844c0c6f43a13fe9df920a16155982a049d8df011b6639157c83`
+- 移除中间代码及缓存后再次构建成功，buildIl2Cpp SKIPPED，APK 原生库名称/ABI 一致；除帧率控制包装库 libswappywrapper.so 的构建 ID 节变化外，其余库哈希一致，包装库执行代码一致
 
-上述结果不等同于 Unity6 真机验收或 Vibe Lab 平台审核通过。此前“安装包签名失败”的完整平台日志尚未提供，不能据此断定根因。
+用户已确认新版菜单可见，日志收到晶体抓取与节点点击；完整真机放置、旋转、手感和性能仍待验收。上述结果不等同于完整 Unity6 真机验收或 Vibe Lab 平台审核通过。此前“安装包签名失败”的完整平台日志尚未提供，不能据此断定根因。
 部分第三方/PICO 预编译原生库未满足16KB ELF LOAD对齐，详细清单见 Validation/native-final.json；当前策略为报告警告，不宣称完整16KB兼容。
 
 ## 权利说明

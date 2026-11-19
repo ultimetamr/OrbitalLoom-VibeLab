@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "versionCode": 28,
+  "package": "com.orbitalloom.puzzle",
+  "unity": "6000.6.8f1",
+  "editmode_tests": {
+    "passed": 171,
+    "failed": 0,
+    "skipped": 0
+  },
+  "editor_level_direct_interaction_smoke_count": 24,
+  "gradle_release_build": "passed",
+  "buildIl2Cpp": "SKIPPED; uses actual precompiled ARM64 IL2CPP",
+  "installed_build_comparison": {
+    "all_other_native_library_hashes_identical": true,
+    "libswappywrapper.so_differing_sections": [
+      ".note.gnu.build-id"
+    ],
+    "libswappywrapper.so_executable_code_identical": true
+  },
+  "local_signature_verified": true,
+  "zipalign_passed": true,
+  "pending": [
+    "Full headset placement and rotation acceptance",
+    "Performance capture",
+    "Vibe Lab review"
+  ],
+  "source_repository": "https://github.com/ultimetamr/OrbitalLoom",
+  "source_commit": "3cf6fd7ceef221499894e4436187adeb7d6d568b"
+}
